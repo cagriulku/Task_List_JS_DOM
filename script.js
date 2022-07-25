@@ -35,7 +35,6 @@ function getTasks() {
 
     tasks.forEach(function (task) {
         counter++;
-        var add = newTaskInput;
 
         //Create Element
         const li = document.createElement('li');
@@ -112,8 +111,9 @@ function removeTask(e) {
 
         counter--;
         e.target.parentElement.parentElement.remove();
-        e.preventDefault();
+
     }
+    // clearTaskFromLocalStorage(addedTasks.firstChild);
 }
 
 // Store Task
