@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+li {
+    list-style: none;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #606159;
+    max-width: 900px;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+body {
+    background: url(./nature.jpg)center center/cover;
+    background-size: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    position: relative;
+}
+
+.column {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    position: relative;
+}
+
+.column .col {
+    float: left;
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.row {
+    padding: 1rem;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #1a2320;
+    border-radius: 0.5rem;
+}
+
+.card-content {
+    padding: 24px;
+
+}
+
+.card-action {
+    padding: 24px;
+
+}
+
+.btn {
+    display: block;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    background-color: #028146;
+    border: 1px #e5e5e5 solid;
+    color: #fff;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.new-task-input {
+    outline: 0;
+    border-width: 0 0 2px;
+    width: 100%;
+    border-color: #fff;
+    background: none;
+    position: relative;
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+
+.new-task-input:focus {
+    border-color: green;
+}
+
+.filter-task-input {
+    outline: 0;
+    border-width: 0 0 2px;
+    width: 100%;
+    border-color: #fff;
+    background: none;
+
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+
+.filter-task-input:focus {
+    border-color: green;
+}
+
+.added-tasks {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.counter {
+    background-color: #028146;
+    padding: 0.2rem 0.2rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.remove {
+    color: #fff;
+    /* font-size: 18px; */
+    background: #028146;
+    padding: 0.3rem 0.3rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    float: right;
+    /* padding: 0.2rem 0.4rem; */
+}
+
+.remove:hover {
+    opacity: 0.8;
+}
+
+.collection-item {
+    border-bottom: 2px #606159 solid;
+    margin: 0.5rem 0;
+}
