@@ -101,7 +101,7 @@ body {
     opacity: 0.8;
 }
 
-.new-task-input {
+.task {
     outline: 0;
     border-width: 0 0 2px;
     width: 100%;
@@ -113,7 +113,7 @@ body {
     margin: 1rem 0;
 }
 
-.new-task-input:focus {
+.task:focus {
     border-color: green;
 }
 
@@ -148,7 +148,7 @@ body {
     border-radius: 0.2rem;
 }
 
-.remove {
+.delete-item {
     color: #fff;
     /* font-size: 18px; */
     background: #028146;
