@@ -7,8 +7,6 @@ const filter = document.querySelector('.filter-task-input');
 
 let a = 0;
 
-let counter = 0;
-
 
 loadEventListener();
 
@@ -24,13 +22,14 @@ function loadEventListener() {
 
 }
 
-
-
-
 //Get Tasks From Local Storage 
-
 function getTasks() {
     let tasks;
+
+    let parent = document.getElementsByClassName('added-tasks')[0];
+    parent.innerHTML = ''
+
+    console.log('parent', parent);
 
     if (localStorage.getItem('tasks') === null) {
         tasks = [];
@@ -38,8 +37,7 @@ function getTasks() {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
 
-    tasks.forEach(function (task) {
-        counter++;
+    tasks.forEach(function (task, counter) {
 
         //Create Element
         const li = document.createElement('li');
@@ -47,14 +45,14 @@ function getTasks() {
         const remove = document.createElement('a');
 
         //Add Class
-        span.className = 'counter';
+        span.className = `counter`;
         li.className = 'collection-item';
         remove.className = 'remove';
 
         remove.innerHTML = '<i class="fa-solid fa-xmark fa-l"></i>';
 
         //Append to Element
-        span.appendChild(document.createTextNode(counter));
+        span.appendChild(document.createTextNode(counter + 1));
         li.appendChild(span);
         li.appendChild(remove);
         li.appendChild(document.createTextNode(task));
@@ -71,18 +69,18 @@ function newTaskAdded(e) {
 
     if (newTaskInput.value === '') {
         alert('Please add Task!');
-        counter--;
         li.lastChild.remove();
     }
 
-    counter++;
+    // counter++;
     var add = newTaskInput;
 
     //Create Element
     const li = document.createElement('li');
     const span = document.createElement('span');
     const remove = document.createElement('a');
-
+    let parent = document.getElementsByClassName('added-tasks')[0];
+    let counter = parent?.childNodes?.length || 0;
     //Add Class
     span.className = 'counter';
     li.className = 'collection-item';
@@ -91,7 +89,7 @@ function newTaskAdded(e) {
     remove.innerHTML = '<i class="fa-solid fa-xmark fa-l"></i>';
 
     //Append to Element
-    span.appendChild(document.createTextNode(counter));
+    span.appendChild(document.createTextNode(counter + 1));
     li.appendChild(span);
     li.appendChild(remove);
     li.appendChild(document.createTextNode(add.value));
@@ -126,19 +124,21 @@ function removeTask(e) {
     if (e.target.parentElement.classList.contains('remove')) {
 
         a++;
-
-        counter--;
         e.target.parentElement.parentElement.remove();
 
         //Remove from Local Storage
         removeTaskFromLocalStorage(e.target.parentElement.parentElement);
+
+        getTasks();
     }
 
 }
 
 //Remove from Local Storage 
 function removeTaskFromLocalStorage(taskItem) {
-    console.log(taskItem);
+    // let idxx = taskItem.querySelector('span').innerText;
+    let idx = parseInt(taskItem.querySelector('span').innerText) - 1
+
     let tasks;
     if (localStorage.getItem('tasks') === null) {
         tasks = [];
@@ -146,11 +146,7 @@ function removeTaskFromLocalStorage(taskItem) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
 
-    tasks.forEach(function (task, index) {
-        if (taskItem.textContent === task) {
-            tasks.splice(index, 1);
-        }
-    });
+    tasks.splice(idx, 1);
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
@@ -159,7 +155,6 @@ function clearTasks() {
     if (confirm('Are you sure?')) {
         while (addedTasks.firstChild) {
             addedTasks.removeChild(addedTasks.firstChild);
-            counter = 0;
         }
 
     }

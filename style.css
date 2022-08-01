@@ -12,12 +12,15 @@ div {
 
 li {
     list-style: none;
-    overflow: hidden;
+    overflow: auto;
+    word-wrap: break-word;
+
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
+    background: black;
 }
 
 .container {
@@ -26,23 +29,22 @@ body {
     margin-right: auto;
     background-color: #606159;
     max-width: 900px;
-    border-radius: 0.5rem;
-    position: relative;
+    border-radius: 30px;
+
 }
 
-body {
-    background: url(./nature.jpg)center center/cover;
-    background-size: 100%;
-    height: 100%;
+.background {
+    background: url(./nature.jpg) no-repeat center center/cover;
+    /* height: 100%; */
+    height: 100vh;
     padding: 1rem 0;
-    position: relative;
+
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem;
-    position: relative;
+    padding: 1.5rem;
 }
 
 .column {
@@ -50,7 +52,7 @@ body {
     margin-left: auto;
     left: auto;
     right: auto;
-    position: relative;
+
 }
 
 .column .col {
@@ -61,18 +63,14 @@ body {
     flex: 1 0 0%;
 }
 
-.row {
-    padding: 1rem;
-    margin: 0;
-    margin-top: 1rem;
-}
-
 .card {
     display: flex;
     flex-direction: column;
     min-width: 0;
     background-color: #1a2320;
-    border-radius: 0.5rem;
+    border-radius: 30px;
+
+
 }
 
 .card-content {
@@ -87,11 +85,12 @@ body {
 
 .btn {
     display: block;
-    padding: 10px 20px;
+    padding: 0.8rem 0;
+    width: 100%;
     font-weight: 500;
-    border-radius: 0.3rem;
+    border-radius: 30px;
     background-color: #028146;
-    border: 1px #e5e5e5 solid;
+    border: 2px #e5e5e5 solid;
     color: #fff;
     margin: 1rem 0;
     cursor: pointer;
@@ -101,19 +100,18 @@ body {
     opacity: 0.8;
 }
 
-.task {
+.new-task-input {
     outline: 0;
     border-width: 0 0 2px;
     width: 100%;
     border-color: #fff;
     background: none;
-    position: relative;
     color: #fff;
     font-size: 18px;
     margin: 1rem 0;
 }
 
-.task:focus {
+.new-task-input:focus {
     border-color: green;
 }
 
@@ -135,28 +133,41 @@ body {
 
 .added-tasks {
     width: 100%;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
 }
 
 .counter {
     background-color: #028146;
-    padding: 0.2rem 0.2rem;
+    padding: 1rem;
+    /* padding-top: 0.4rem; */
+    /* padding-bottom: 1.8rem; */
     color: #fff;
     font-weight: 600;
-    font-size: 18px;
+    /* font-size: 18px; */
     margin-right: 0.5rem;
-    border-radius: 0.2rem;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    text-align: center;
+    /* position: relative; */
+    display: inline-block;
+
 }
 
-.delete-item {
+.remove {
     color: #fff;
-    /* font-size: 18px; */
     background: #028146;
-    padding: 0.3rem 0.3rem;
-    border-radius: 0.2rem;
+    /* margin: 0.5rem 0.9rem; */
+    /* padding: 1rem; */
+    padding: 1rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
     cursor: pointer;
+    /* position: inherit; */
     float: right;
-    /* padding: 0.2rem 0.4rem; */
+    /* margin-right: auto;
+    margin-left: 0; */
+    /* z-index: 1; */
+    font-size: 19px;
 }
 
 .remove:hover {
@@ -164,6 +175,26 @@ body {
 }
 
 .collection-item {
-    border-bottom: 2px #606159 solid;
-    margin: 0.5rem 0;
+    /* border: 2px #606159 solid; */
+    border: 1px yellow solid;
+    /* margin: 0.5rem 0; */
+    /* padding: 0.5rem 0; */
+    border-radius: 30px;
+    margin: 1rem 0;
+    /* padding-top: 0.6rem; */
+    /* margin-top: 1rem; */
+    /* padding-bottom: 0.1rem; */
+    /* position: relative; */
+}
+
+
+
+.added-tasks li {
+    border: 2px #606159 solid;
+    /* width: 100%; */
+    /* padding: 0.1rem; */
+    /* padding: 1rem 0; */
+    /* padding-top: 0.6rem; */
+    /* margin: 1rem; */
+    /* position: relative; */
 }
