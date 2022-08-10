@@ -1,6 +1,7 @@
-## This is my task list project
+# This is my task list project
 
-# My project app
+## I continue to develop
+### My project app
 [@live](https://tasklistcagriulku.netlify.app/)
 
 
