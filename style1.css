@@ -11,10 +11,10 @@ div {
 }
 
 li {
-    /* display: inline-block; */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 14px;
 }
 
 body {
@@ -27,15 +27,13 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #606159;
+    background-color: rgba(0, 0, 0, 0.5);
     max-width: 900px;
     border-radius: 30px;
-
 }
 
 .background {
     background: url(./nature.jpg) no-repeat center center/cover;
-    /* height: 100%; */
     height: 100vh;
     padding: 1rem 0;
 
@@ -67,18 +65,17 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    background-color: #1a2320;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 30px;
 }
 
 .card-content {
     padding: 20px;
-
 }
 
 .card-action {
     padding: 20px;
-
+    position: relative;
 }
 
 .btn {
@@ -105,7 +102,7 @@ body {
     border-color: #fff;
     background: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     margin: 1rem 0;
 }
 
@@ -119,9 +116,8 @@ body {
     width: 100%;
     border-color: #fff;
     background: none;
-
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     margin: 1rem 0;
 }
 
@@ -131,11 +127,12 @@ body {
 
 .added-tasks {
     width: 100%;
+    position: relative;
 }
 
 .counter {
     background-color: #026838;
-    padding: 1rem;
+    padding: 1rem 0.6rem;
     color: #fff;
     font-weight: 600;
     margin-right: 0.5rem;
@@ -143,35 +140,125 @@ body {
     border-bottom-left-radius: 30px;
     text-align: center;
     display: inline-block;
-
 }
 
 .remove {
     color: #fff;
     background: #026838;
-    padding: 1rem;
+    padding: 1.1rem 0.6rem;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     cursor: pointer;
     float: right;
-    font-size: 19px;
-    display: inline-block;
 }
 
 .remove:hover {
     opacity: 0.8;
 }
 
+
+.remove-all-text {
+    color: #fff;
+    background: #014827;
+    padding: 0.6rem;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.remove-all-text:hover {
+    opacity: 0.8;
+}
+
+.glass {
+    color: #fff;
+    background: #026838;
+    padding: 1.1rem 0.6rem;
+    cursor: pointer;
+    float: right;
+    border-right: 2px #606159 solid;
+    border-left: 2px #606159 solid;
+}
+
+.glass:hover {
+    opacity: 0.8;
+}
+
 .collection-item {
     border-radius: 30px;
     margin: 1rem 0;
-}
-
-.added-tasks li {
+    position: relative;
     border: 2px #606159 solid;
+    list-style: none;
 }
 
 .task-heading,
 .task-heading-one {
     text-align: center;
+}
+
+.footer {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.footer-apps {
+    margin-left: 0.2rem;
+}
+
+.footer-apps i {
+    padding: 0 0.3rem;
+    padding-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    color: #e5e5e5;
+}
+
+.footer-apps i:hover {
+    opacity: 0.8;
+}
+
+.all-text {
+    background-color: #e5e5e5;
+    border-radius: 15px;
+    color: black;
+    max-width: 100%;
+    margin: 1rem;
+    padding: 1rem 0.8rem;
+    position: relative;
+}
+
+.all-text p {
+    word-wrap: break-word;
+    white-space: initial;
+    overflow: auto;
+    width: 100%;
+    padding: 0.5rem;
+    position: relative;
+}
+
+/* Media Queries */
+@media screen and (max-width: 375px) {
+    body {
+        font-size: 10px
+    }
+
+    .row {
+        padding: 0.3rem;
+    }
+
+    .card-content {
+        padding: 10px;
+    }
+
+    .card-action {
+        padding: 10px;
+    }
 }
