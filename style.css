@@ -273,7 +273,7 @@ body {
     max-width: 900px;
     border-radius: 30px;
     text-align: center;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .test-success {
@@ -285,5 +285,4 @@ body {
     background-color: #b20000;
     opacity: 0.8;
     color: #e5e500;
-
 }
